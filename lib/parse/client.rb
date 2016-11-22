@@ -9,12 +9,7 @@ require 'logger'
 module Parse
   # The client that communicates with the Parse server via REST
   class Client
-    RETRIED_EXCEPTIONS = [
-      'Faraday::Error::TimeoutError',
-      'Faraday::Error::ParsingError',
-      'Faraday::Error::ConnectionFailed',
-      'Parse::ParseProtocolRetry'
-    ]
+    RETRIED_EXCEPTIONS = []
 
     attr_accessor :host
     attr_accessor :path
