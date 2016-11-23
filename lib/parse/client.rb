@@ -57,12 +57,6 @@ module Parse
 
         c.use Faraday::GetMethodOverride if @get_method_override
 
-        c.use Faraday::BetterRetry,
-              max: @max_retries,
-              logger: @logger,
-              interval: @interval,
-              backoff_factor: @backoff_factor,
-              exceptions: @retried_exceptions
         c.use Faraday::ExtendedParseJson
 
         c.response :logger, @logger unless @quiet
